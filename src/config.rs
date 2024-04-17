@@ -28,6 +28,7 @@ pub struct Config {
     pub intents: Intents,
     #[serde(default = "default_port")]
     pub port: u16,
+    pub clusters: u32,
     #[serde(default)]
     pub shards: Option<u32>,
     #[serde(default)]

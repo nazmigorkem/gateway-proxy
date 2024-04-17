@@ -383,6 +383,12 @@ fn handler(
                 .status(StatusCode::OK)
                 .body(Full::from(shard_count_str.to_string()))
                 .unwrap()
+        },
+        (&Method::GET, "/cluster-count") => {
+            Response::builder()
+                .status(StatusCode::OK)
+                .body(Full::from(CONFIG.clusters.to_string()))
+                .unwrap()
         }
         // Usually one would return a 404 here, but we will just provide the websocket
         // upgrade for backwards compatibility.
